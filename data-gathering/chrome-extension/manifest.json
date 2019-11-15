@@ -1,0 +1,36 @@
+{
+  "manifest_version": 2,
+  "name": "PFR+",
+  "version": "5.8",
+  "description": "Quality-of-life upgrades for PFR",
+  "background": {
+    "scripts": ["bootstrap.js"],
+    "persistent": false
+  },
+  "permissions": [
+    "declarativeContent",
+    "tabs",
+    "https://*.pro-football-reference.com/"
+  ],
+  "icons": {
+    "16": "icon16.png",
+    "32": "icon32.png",
+    "64": "icon64.png",
+    "128": "icon128.png"
+  },
+  "page_action": {
+    "default_title": "PFR+",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon16.png",
+      "32": "icon32.png",
+      "64": "icon64.png",
+      "128": "icon128.png"
+    }
+  },
+  "content_scripts": [{
+    "matches": ["https://*.pro-football-reference.com/*"],
+    "js": ["extension.js"],
+    "all_frames": true
+  }]
+}
